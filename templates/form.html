@@ -11,12 +11,12 @@
 
     <form method="POST">
         <div>
-            <label>初期配置（初期配置を10個（A,B,C,*で）スペースなしで入力(宝箱固定している所は'*'を入力)）:</label><br>
+            <label>初期配置（初期配置を10個（A,B,C,*で）スペースなしで入力(宝箱固定している所は'*'を入力)例1:CCCCAAABAC 例2:CCCCAAA**C ）:</label><br>
             <input type="text" name="initial" required>
         </div>
         <div>
-            <p>理想配置の手入力(デフォルト：鶴観解説動画の推奨配置 Youtube:<a href="{{ link }}" target="_blank">鶴観解説動画</a> ) </p>
-            <input type="radio" name="goal_mode" value="manual" checked> 手入力する<br>
+            <p>理想配置の入力(デフォルトCBCCCB*CCB：鶴観解説動画の推奨配置 Youtube:<a href="{{ link }}" target="_blank">鶴観解説動画</a> ) </p>
+            <input type="radio" name="goal_mode" value="manual" checked> 入力する<br>
             <input type="radio" name="goal_mode" value="default"> デフォルトを使う
         </div>
         <br>
