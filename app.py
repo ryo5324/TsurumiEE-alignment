@@ -143,22 +143,10 @@ f"<p>日数: {len(solution)} 日<br>(モシリ->移動編モシリ炎アビス+�
         else:
             return "<h1>解が見つかりませんでした。</h1>"
 
-    return render_template('form.html')
+    return render_template('form.html', link="https://youtu.be/2xqllaCTP5c")
 
 
 if __name__ == '__main__':
     import os
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
-
-
-
-
-@app.route('/', methods=['GET', 'POST'])
-def index():
-    if request.method == 'POST':
-        # ... ここで処理 ...
-        pass
-
-    return render_template('form.html', link="https://youtu.be/2xqllaCTP5c")
-
