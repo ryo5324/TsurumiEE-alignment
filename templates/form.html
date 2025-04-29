@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>鶴観配置調整</title>
+</head>
+<body>
+    <h1>鶴観配置調整</h1>
+    <h3>精鋭配置入力</h3>
+    <label>左から順に1モシリ炎アビス 2モシリ雷アビス 3モシリ暴徒 4チライ機兵 5オイナ機兵 6オイナ暴徒 7シリコロ暴徒 8アウタケ東 9アウタケ西 10ワクカウ</label><br>
+
+    <form method="POST">
+        <div>
+            <label>初期配置（初期配置を10個（A,B,C,*で）スペースなしで入力(宝箱固定している所は'*'を入力)）:</label><br>
+            <input type="text" name="initial" required>
+        </div>
+        <div>
+            <p>理想配置の手入力(デフォルト：鶴観解説動画の推奨配置 Youtube:<a href="{{ link }}" target="_blank">鶴観解説動画</a> ) </p>
+            <input type="radio" name="goal_mode" value="manual" checked> 手入力する<br>
+            <input type="radio" name="goal_mode" value="default"> デフォルトを使う
+        </div>
+        <br>
+        <div id="goal_input_area">
+            <label>理想配置（理想配置を10個（A,B,C,*で）スペースなしで入力(どの配置でもよい所は'*'を入力)）:</label><br>
+            <input type="text" name="goal">
+        </div>
+        <br>
+        <button type="submit">スタート</button>
+    </form>
+
+    <script>
+        // ラジオボタンによって理想配置の入力欄を表示/非表示
+        const manual = document.querySelector('input[value="manual"]');
+        const def = document.querySelector('input[value="default"]');
+        const goalInputArea = document.getElementById('goal_input_area');
+
+        manual.addEventListener('change', () => {
+            goalInputArea.style.display = 'block';
+        });
+
+        def.addEventListener('change', () => {
+            goalInputArea.style.display = 'none';
+        });
+
+        // 初期表示
+        if (def.checked) {
+            goalInputArea.style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
+
