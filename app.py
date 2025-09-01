@@ -111,7 +111,8 @@ def index():
             return "エラー: 理想配置はA,B,C,*の10文字で入力してください。"
 
         # 初期状態とゴール状態を数値化
-        initial_state = tuple(letter_to_int.get(ch, 0) for ch in initial)
+        shifted_initial_state = tuple((letter_to_int.get(ch, 0) + 1) % 3 for ch in initial)
+	initial_state = shifted_initial_state
         goal_state = [letter_to_int.get(ch, None) if ch != '*' else None for ch in goal_letters]
 
         # パズルを解く
